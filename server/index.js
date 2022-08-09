@@ -12,7 +12,7 @@ server.use(express.json());
 
 // use routes and routers here
 server.use(yarntypeRouter);
-server.get('/', (req, res) => {
+server.get('/api', (req, res) => {
     res.send('Hello, this is the server')
 });
 
