@@ -4,7 +4,7 @@ const yarntypeRouter = require('./routers/yarntype_router');
 
 // create server
 const server = express();
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3000;
 
 // use middleware here
 // middleware to handle incoming json data
@@ -12,7 +12,8 @@ server.use(express.json());
 
 // use routes and routers here
 server.use(yarntypeRouter);
-server.get('/', (req, res) => {
+server.get('/api', (req, res) => {
+    console.log("Hello, this is the server")
     res.send('Hello, this is the server')
 });
 
