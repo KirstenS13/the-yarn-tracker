@@ -4,7 +4,7 @@ const yarntypeRouter = require('./routers/yarntype_router');
 
 // create server
 const server = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
 // use middleware here
 // middleware to handle incoming json data
