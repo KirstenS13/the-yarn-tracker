@@ -5,7 +5,7 @@ const path = require('path')
 
 // create server
 const server = express();
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3000;
 
 // tell express where to serve static pages from
 server.use(express.static(path.join(__dirname, 'build')));
