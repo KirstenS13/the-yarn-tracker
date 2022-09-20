@@ -8,7 +8,7 @@ function App() {
   const callServer = () => {
     console.log("clicked call server button");
     axios
-      .get("https://localhost:3000/api")
+      .get("http://localhost:3000/api")
       .then(res => {
         console.log('res', res);
       })
@@ -20,7 +20,7 @@ function App() {
   const getYarn = () => {
     console.log("attempting to get yarn")
     axios
-      .get("https://localhost:3000/api/yarntypes")
+      .get("http://localhost:3000/api/yarntypes")
       .then(res => {
         console.log('res', res);
       })
