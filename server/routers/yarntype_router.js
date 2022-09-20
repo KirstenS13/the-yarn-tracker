@@ -8,7 +8,7 @@ const router = express.Router();
 router.get('/api/yarntypes', async (req, res, next) => {
     try {
         const yarntypes = await Yarntype.getAllYarntypes()
-        res.json(yarntypes)
+        res.json({message: "I'm the response from the server", yarntypes: yarntypes})
     } catch (err) {
         next(err)
     }
