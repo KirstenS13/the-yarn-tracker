@@ -1,39 +1,32 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 import axios from 'axios';
 
-function App() {
-  
-  const callServer = () => {
-    console.log("clicked call server button");
-    axios
-      .get("http://localhost:3000/api")
-      .then(res => {
-        console.log('res', res);
-      })
-      .catch(err => {
-        console.log('err', err)
-      })
-  }
+import YarntypeList from './components/YarntypeList';
 
-  const getYarn = () => {
-    console.log("attempting to get yarn")
-    axios
-      .get("http://localhost:3000/api/yarntypes")
-      .then(res => {
-        console.log('res', res);
-      })
-      .catch(err => {
-        console.log('err', err)
-      })
-  }
+function App() {
+  const [yarntypes, setYarntypes] = useState();
+
+  useEffect(() => {
+    console.log('Hi, this is useEffect')
+    const getYarntypes = () => {
+      axios
+        .get("http://localhost:3000/api/yarntypes")
+        .then(res => {
+          setYarntypes(res.data);
+        })
+        .catch(err => {
+          console.log('err', err)
+        })
+    };
+    getYarntypes();
+  }, []);
 
   return (
     <div className="App">
       <p>The Yarn Tracker FE</p>
-      <button onClick={callServer}>Call the server</button>
-      <button onClick={getYarn}>Get Yarn</button>
+      <YarntypeList yarntypes={yarntypes}/>
     </div>
   );
 }
