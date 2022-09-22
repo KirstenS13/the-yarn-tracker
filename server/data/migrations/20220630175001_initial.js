@@ -44,7 +44,7 @@ exports.up = async function(knex) {
         table.uuid('yarntype_id').references('id').inTable('yarntype').notNullable()
     })
 
-    await knex.schema.createTable('skein', (table) => {
+    await knex.schema.createTable('stash', (table) => {
         table.uuid('id').primary().unique().notNullable()
         table.uuid('user_id').references('id').inTable('user').notNullable()
         table.uuid('colorway_yarntype_id').references('id').inTable('colorway_yarntype').unique().notNullable()
@@ -53,7 +53,7 @@ exports.up = async function(knex) {
 };
 
 exports.down = async function(knex) {
-    await knex.schema.dropTableIfExists('skein')
+    await knex.schema.dropTableIfExists('stash')
     await knex.schema.dropTableIfExists('colorway_yarntype')
     await knex.schema.dropTableIfExists('yarntype_fiber')
     await knex.schema.dropTableIfExists('yarntype')
