@@ -9,24 +9,23 @@ function App() {
   const [yarntypes, setYarntypes] = useState();
 
   useEffect(() => {
-    console.log('Hi, this is useEffect')
-    const getYarntypes = () => {
-      axios
-        .get("http://localhost:3000/api/yarntypes")
-        .then(res => {
+    axios
+      .get('http://localhost:3000/api/yarntypes')
+      .then(res => {
           setYarntypes(res.data);
-        })
-        .catch(err => {
+      })
+      .catch(err => {
           console.log('err', err)
-        })
-    };
-    getYarntypes();
-  }, []);
+      })
+      .then(res => {
+        console.log('axios call complete')
+      })
+  }, [])
 
   return (
     <div className="App">
       <p>The Yarn Tracker FE</p>
-      <YarntypeList yarntypes={yarntypes}/>
+      { yarntypes ? <YarntypeList yarntypes={yarntypes}/> : <p>My Yarn</p> }
     </div>
   );
 }
