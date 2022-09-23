@@ -9,7 +9,6 @@ function App() {
   const [yarntypes, setYarntypes] = useState();
 
   useEffect(() => {
-    console.log('Hi, this is useEffect')
     const getYarntypes = () => {
       axios
         .get("http://localhost:3000/api/yarntypes")

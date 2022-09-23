@@ -5,7 +5,7 @@ const YarntypeList = props => {
     return (
         <>
             <p>My Yarn</p>
-            {props.yarntypes.map((yarntype, index) => {
+            {props.yarntypes.map(yarntype => {
                 return (
                     <YarntypeCard 
                         key={yarntype.id}
