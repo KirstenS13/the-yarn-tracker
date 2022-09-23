@@ -17,9 +17,6 @@ function App() {
       .catch(err => {
           console.log('err', err)
       })
-      .then(res => {
-        console.log('axios call complete')
-      })
   }, [])
 
   return (
