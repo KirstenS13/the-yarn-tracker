@@ -131,3 +131,6 @@ dist
 
 # Static pages
 /server/build
+
+# Development database
+/server/data/yarn.db3

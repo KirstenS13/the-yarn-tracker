@@ -1,5 +1,5 @@
 exports.seed = async function(knex) {
-  await knex('skein').truncate()
+  await knex('stash').truncate()
   await knex('colorway_yarntype').truncate()
   await knex('yarntype_fiber').truncate()
   await knex('yarntype').truncate()

@@ -1,5 +1,5 @@
 exports.seed = async function(knex) {
-  await knex('skein').insert([
+  await knex('stash').insert([
     { id: '1', user_id: '1', colorway_yarntype_id: '2', quantity: 1 },
     { id: '2', user_id: '1', colorway_yarntype_id: '4', quantity: 2 },
     { id: '3', user_id: '1', colorway_yarntype_id: '7', quantity: 5 },
